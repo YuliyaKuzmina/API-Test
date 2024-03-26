@@ -1,0 +1,6105 @@
+{
+	"info": {
+		"_postman_id": "24ca7d3d-2504-4374-b4f9-db90da5a4e68",
+		"name": "CodePet",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "29937764",
+		"_collection_link": "https://www.postman.com/qa21-kuzz/workspace/kuzzmina/collection/29937764-24ca7d3d-2504-4374-b4f9-db90da5a4e68?action=share&source=collection_link&creator=29937764"
+	},
+	"item": [
+		{
+			"name": "Регистрация по e-mail доп",
+			"item": [
+				{
+					"name": "E-mail Валидация_допустимые",
+					"item": [
+						{
+							"name": "Токен/Авторизация по почте и паролю",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {\r",
+											"    pm.response.to.have.status(200);\r",
+											"});"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"password\": \"Qaz963*1\",\r\n  \"email\": \"test@test.ru\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://89.23.117.168/api/v1/token/login/",
+									"protocol": "http",
+									"host": [
+										"89",
+										"23",
+										"117",
+										"168"
+									],
+									"path": [
+										"api",
+										"v1",
+										"token",
+										"login",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "915. Регистрация по email",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code\", function () {\r",
+											"    pm.response.to.have.status(201);\r",
+											"});"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"email\": \"test@test.ru\",\r\n  \"username\": \"Inkognito\",\r\n  \"password\": \"Qaz963*1\",\r\n  \"re_password\": \"Qaz963*1\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://89.23.117.168/api/v1/users/",
+									"protocol": "http",
+									"host": [
+										"89",
+										"23",
+										"117",
+										"168"
+									],
+									"path": [
+										"api",
+										"v1",
+										"users",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "917. дефис в имени",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code\", function () {\r",
+											"    pm.response.to.have.status(201);\r",
+											"});"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"email\": \"te-st@test.ru\",\r\n  \"username\": \"Vasya\",\r\n  \"password\": \"Qaz963*1\",\r\n  \"re_password\": \"Qaz963*1\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://89.23.117.168/api/v1/users/",
+									"protocol": "http",
+									"host": [
+										"89",
+										"23",
+										"117",
+										"168"
+									],
+									"path": [
+										"api",
+										"v1",
+										"users",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "918. нижнее подчеркивание в имени",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code\", function () {\r",
+											"    pm.response.to.have.status(201);\r",
+											"});"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"email\": \"rafael_kar@test.ru\",\r\n  \"username\": \"Rafael\",\r\n  \"password\": \"Qaz963*1\",\r\n  \"re_password\": \"Qaz963*1\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://89.23.117.168/api/v1/users/",
+									"protocol": "http",
+									"host": [
+										"89",
+										"23",
+										"117",
+										"168"
+									],
+									"path": [
+										"api",
+										"v1",
+										"users",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "919. точка в имени",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code\", function () {\r",
+											"    pm.response.to.have.status(201);\r",
+											"});"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"email\": \"saratov.today@test.ru\",\r\n  \"username\": \"AnnaVictorovna\",\r\n  \"password\": \"Qaz963*1\",\r\n  \"re_password\": \"Qaz963*1\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://89.23.117.168/api/v1/users/",
+									"protocol": "http",
+									"host": [
+										"89",
+										"23",
+										"117",
+										"168"
+									],
+									"path": [
+										"api",
+										"v1",
+										"users",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "920. 64 символа в имени",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code\", function () {\r",
+											"    pm.response.to.have.status(201);\r",
+											"});"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"email\": \"testtesttesttesttesttesttesttesttesttesttesttesttesttesttesttest@test.ru\",\r\n  \"username\": \"Testof\",\r\n  \"password\": \"Qaz963*1\",\r\n  \"re_password\": \"Qaz963*1\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://89.23.117.168/api/v1/users/",
+									"protocol": "http",
+									"host": [
+										"89",
+										"23",
+										"117",
+										"168"
+									],
+									"path": [
+										"api",
+										"v1",
+										"users",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "921. 1 символ в имени",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code\", function () {\r",
+											"    pm.response.to.have.status(201);\r",
+											"});"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"email\": \"s@test.ru\",\r\n  \"username\": \"Anna\",\r\n  \"password\": \"Qaz963*1\",\r\n  \"re_password\": \"Qaz963*1\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://89.23.117.168/api/v1/users/",
+									"protocol": "http",
+									"host": [
+										"89",
+										"23",
+										"117",
+										"168"
+									],
+									"path": [
+										"api",
+										"v1",
+										"users",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "942. 2 символа в имени",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code\", function () {\r",
+											"    pm.response.to.have.status(201);\r",
+											"});"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"email\": \"sm@test.ru\",\r\n  \"username\": \"Anna\",\r\n  \"password\": \"Qaz963*1\",\r\n  \"re_password\": \"Qaz963*1\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://89.23.117.168/api/v1/users/",
+									"protocol": "http",
+									"host": [
+										"89",
+										"23",
+										"117",
+										"168"
+									],
+									"path": [
+										"api",
+										"v1",
+										"users",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "940. длина поля 256 символов (64 в имени, 191 домен)",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code\", function () {\r",
+											"    pm.response.to.have.status(201);\r",
+											"});"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"email\": \"testtesttesttesttesttesttesttesttesttesttesttesttesttesttesttest@testtesttesttesttesttesttesttesttesttesttesttesttesttesttesttes.testtesttesttesttesttesttesttesttesttesttesttesttesttesttesttes.testtesttesttesttesttesttesttesttesttesttesttesttesttesttesttes\",\r\n  \"username\": \"Anna\",\r\n  \"password\": \"Qaz963*1\",\r\n  \"re_password\": \"Qaz963*1\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://89.23.117.168/api/v1/users/",
+									"protocol": "http",
+									"host": [
+										"89",
+										"23",
+										"117",
+										"168"
+									],
+									"path": [
+										"api",
+										"v1",
+										"users",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "931. 10 символов в имени",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code\", function () {\r",
+											"    pm.response.to.have.status(201);\r",
+											"});"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"email\": \"matrasoff8@test.ru\",\r\n  \"username\": \"Han\",\r\n  \"password\": \"Qaz963*1\",\r\n  \"re_password\": \"Qaz963*1\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://89.23.117.168/api/v1/users/",
+									"protocol": "http",
+									"host": [
+										"89",
+										"23",
+										"117",
+										"168"
+									],
+									"path": [
+										"api",
+										"v1",
+										"users",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "945. 63 символа в имени",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code\", function () {\r",
+											"    pm.response.to.have.status(201);\r",
+											"});"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"email\": \"testtesttesttesttesesttesttesttesttesttesttesttesttesttestteste@test.ru\",\r\n  \"username\": \"Hanny\",\r\n  \"password\": \"Qaz963*1\",\r\n  \"re_password\": \"Qaz963*1\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://89.23.117.168/api/v1/users/",
+									"protocol": "http",
+									"host": [
+										"89",
+										"23",
+										"117",
+										"168"
+									],
+									"path": [
+										"api",
+										"v1",
+										"users",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "922/923. цифры и дефис в домене",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code\", function () {\r",
+											"    pm.response.to.have.status(201);\r",
+											"});"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"email\": \"test@test-123.ru\",\r\n  \"username\": \"Number\",\r\n  \"password\": \"Qaz963*1\",\r\n  \"re_password\": \"Qaz963*1\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://89.23.117.168/api/v1/users/",
+									"protocol": "http",
+									"host": [
+										"89",
+										"23",
+										"117",
+										"168"
+									],
+									"path": [
+										"api",
+										"v1",
+										"users",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "924/937/943/944. точка-разделитель, 2 символа в субдомене, 2 латинских символа в домене",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code\", function () {\r",
+											"    pm.response.to.have.status(201);\r",
+											"});"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"email\": \"test@te.st.ru\",\r\n  \"username\": \"NumberQA\",\r\n  \"password\": \"Qaz963*1\",\r\n  \"re_password\": \"Qaz963*1\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://89.23.117.168/api/v1/users/",
+									"protocol": "http",
+									"host": [
+										"89",
+										"23",
+										"117",
+										"168"
+									],
+									"path": [
+										"api",
+										"v1",
+										"users",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "925/926. 1 символ в домене, 2 символа в домене верхнего уровня",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code\", function () {\r",
+											"    pm.response.to.have.status(201);\r",
+											"});"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"email\": \"test@q.ru\",\r\n  \"username\": \"Number.QA\",\r\n  \"password\": \"Qaz963*1\",\r\n  \"re_password\": \"Qaz963*1\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://89.23.117.168/api/v1/users/",
+									"protocol": "http",
+									"host": [
+										"89",
+										"23",
+										"117",
+										"168"
+									],
+									"path": [
+										"api",
+										"v1",
+										"users",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "871/933. 7 символов в домене(латиница и кириллица)",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code\", function () {\r",
+											"    pm.response.to.have.status(201);\r",
+											"});"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"email\": \"test@тестting.ru\",\r\n  \"username\": \"QAqwer\",\r\n  \"password\": \"Qaz963*1\",\r\n  \"re_password\": \"Qaz963*1\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://89.23.117.168/api/v1/users/",
+									"protocol": "http",
+									"host": [
+										"89",
+										"23",
+										"117",
+										"168"
+									],
+									"path": [
+										"api",
+										"v1",
+										"users",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "929. 63 символа в домене",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code\", function () {\r",
+											"    pm.response.to.have.status(201);\r",
+											"});"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"email\": \"test@testtesttesttesttesttesttesttesttesttesttesttesttesttesttestte.ru\",\r\n  \"username\": \"QtestA\",\r\n  \"password\": \"Qaz963*1\",\r\n  \"re_password\": \"Qaz963*1\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://89.23.117.168/api/v1/users/",
+									"protocol": "http",
+									"host": [
+										"89",
+										"23",
+										"117",
+										"168"
+									],
+									"path": [
+										"api",
+										"v1",
+										"users",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "947. 62 символа в домене",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code\", function () {\r",
+											"    pm.response.to.have.status(201);\r",
+											"});"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"email\": \"test@testtesttesttesttesttesttesttesttesttesttesttesttesttesttestte.ru\",\r\n  \"username\": \"Asist\",\r\n  \"password\": \"Qaz963*1\",\r\n  \"re_password\": \"Qaz963*1\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://89.23.117.168/api/v1/users/",
+									"protocol": "http",
+									"host": [
+										"89",
+										"23",
+										"117",
+										"168"
+									],
+									"path": [
+										"api",
+										"v1",
+										"users",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "941. 252 символа в домене",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code\", function () {\r",
+											"    pm.response.to.have.status(201);\r",
+											"});"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"email\": \"te@testtesttesttesttesttesttesttesttesttesttesttesttesttesttesttes.testtesttesttesttesttesttesttesttesttesttesttesttesttesttesttes.testtesttesttesttesttesttesttesttesttesttesttesttesttesttesttes.testtesttesttesttesttesttesttesttesttesttesttesttesttestt\",\r\n  \"username\": \"Asistent\",\r\n  \"password\": \"Qaz963*1\",\r\n  \"re_password\": \"Qaz963*1\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://89.23.117.168/api/v1/users/",
+									"protocol": "http",
+									"host": [
+										"89",
+										"23",
+										"117",
+										"168"
+									],
+									"path": [
+										"api",
+										"v1",
+										"users",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "927. 1 символ в субдомене",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code\", function () {\r",
+											"    pm.response.to.have.status(201);\r",
+											"});"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"email\": \"test@t.st.ru\",\r\n  \"username\": \"qaTest\",\r\n  \"password\": \"Qaz963*1\",\r\n  \"re_password\": \"Qaz963*1\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://89.23.117.168/api/v1/users/",
+									"protocol": "http",
+									"host": [
+										"89",
+										"23",
+										"117",
+										"168"
+									],
+									"path": [
+										"api",
+										"v1",
+										"users",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "928. 63 символа в субдомене",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 201\", function () {\r",
+											"    pm.response.to.have.status(201);\r",
+											"});"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"email\": \"test@testtesttesttesttesttesttesttesttesttesttesttesttesttesttesttes.st.ru\",\r\n  \"username\": \"Tester\",\r\n  \"password\": \"Qaz963*1\",\r\n  \"re_password\": \"Qaz963*1\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://89.23.117.168/api/v1/users/",
+									"protocol": "http",
+									"host": [
+										"89",
+										"23",
+										"117",
+										"168"
+									],
+									"path": [
+										"api",
+										"v1",
+										"users",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "932/934/936. 10 символов в субдомене (латиница и цифры)",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code\", function () {\r",
+											"    pm.response.to.have.status(201);\r",
+											"});"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"email\": \"tester@tessting23.st.ru\",\r\n  \"username\": \"TesterSup\",\r\n  \"password\": \"Qaz963*1\",\r\n  \"re_password\": \"Qaz963*1\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://89.23.117.168/api/v1/users/",
+									"protocol": "http",
+									"host": [
+										"89",
+										"23",
+										"117",
+										"168"
+									],
+									"path": [
+										"api",
+										"v1",
+										"users",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "935. Дефис в субдомене",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code\", function () {\r",
+											"    pm.response.to.have.status(201);\r",
+											"});"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"email\": \"tester@te-st.test.ru\",\r\n  \"username\": \"supertest\",\r\n  \"password\": \"Qaz963*1\",\r\n  \"re_password\": \"Qaz963*1\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://89.23.117.168/api/v1/users/",
+									"protocol": "http",
+									"host": [
+										"89",
+										"23",
+										"117",
+										"168"
+									],
+									"path": [
+										"api",
+										"v1",
+										"users",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "946. 62 символа в субдомене",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 201\", function () {\r",
+											"    pm.response.to.have.status(201);\r",
+											"});"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"email\": \"test@testtesttesttesttesttesttesttesttesttesttesttesttesttesttestte.st.ru\",\r\n  \"username\": \"YouTester\",\r\n  \"password\": \"Qaz963*1\",\r\n  \"re_password\": \"Qaz963*1\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://89.23.117.168/api/v1/users/",
+									"protocol": "http",
+									"host": [
+										"89",
+										"23",
+										"117",
+										"168"
+									],
+									"path": [
+										"api",
+										"v1",
+										"users",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "930.  63 символа в домене верхнего уровня",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 201\", function () {\r",
+											"    pm.response.to.have.status(201);\r",
+											"});"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"email\": \"test@test.testtesttesttesttesttesttesttesttesttesttesttesttesttesttesttes\",\r\n  \"username\": \"YouTest\",\r\n  \"password\": \"Qaz963*1\",\r\n  \"re_password\": \"Qaz963*1\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://89.23.117.168/api/v1/users/",
+									"protocol": "http",
+									"host": [
+										"89",
+										"23",
+										"117",
+										"168"
+									],
+									"path": [
+										"api",
+										"v1",
+										"users",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "949.  62 символа в домене верхнего уровня",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 201\", function () {\r",
+											"    pm.response.to.have.status(201);\r",
+											"});"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"email\": \"test@test.testtesttesttesttesttesttesttesttesttesttesttesttesttesttestte\",\r\n  \"username\": \"You Testof\",\r\n  \"password\": \"Qaz963*1\",\r\n  \"re_password\": \"Qaz963*1\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://89.23.117.168/api/v1/users/",
+									"protocol": "http",
+									"host": [
+										"89",
+										"23",
+										"117",
+										"168"
+									],
+									"path": [
+										"api",
+										"v1",
+										"users",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "938.  10 символов в домене верхнего уровня",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 201\", function () {\r",
+											"    pm.response.to.have.status(201);\r",
+											"});"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"email\": \"test@test.testtestte\",\r\n  \"username\": \"You Testoff\",\r\n  \"password\": \"Qaz963*1\",\r\n  \"re_password\": \"Qaz963*1\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://89.23.117.168/api/v1/users/",
+									"protocol": "http",
+									"host": [
+										"89",
+										"23",
+										"117",
+										"168"
+									],
+									"path": [
+										"api",
+										"v1",
+										"users",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "948.  3 символа в домене верхнего уровня",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 201\", function () {\r",
+											"    pm.response.to.have.status(201);\r",
+											"});"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"email\": \"test@test.com\",\r\n  \"username\": \"Youta\",\r\n  \"password\": \"Qaz963*1\",\r\n  \"re_password\": \"Qaz963*1\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://89.23.117.168/api/v1/users/",
+									"protocol": "http",
+									"host": [
+										"89",
+										"23",
+										"117",
+										"168"
+									],
+									"path": [
+										"api",
+										"v1",
+										"users",
+										""
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "E-mail Валидация _негативные",
+					"item": [
+						{
+							"name": "861/862. Ввод кириллицы и иероглифов в имени",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 400\", function () {\r",
+											"    pm.response.to.have.status(400);\r",
+											"});"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"email\": \"тест水木@mail.ru\",\r\n  \"username\": \"Фаина\",\r\n  \"password\": \"Qwerty123\",\r\n  \"re_password\": \"Qwerty123\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://89.23.117.168/api/v1/users/",
+									"protocol": "http",
+									"host": [
+										"89",
+										"23",
+										"117",
+										"168"
+									],
+									"path": [
+										"api",
+										"v1",
+										"users",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "898. Ввод спец.символов в имени",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 400\", function () {\r",
+											"    pm.response.to.have.status(400);\r",
+											"});"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"email\": \"test%!@mail.ru\",\r\n  \"username\": \"Фаина\",\r\n  \"password\": \"Qwerty123\",\r\n  \"re_password\": \"Qwerty123\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://89.23.117.168/api/v1/users/",
+									"protocol": "http",
+									"host": [
+										"89",
+										"23",
+										"117",
+										"168"
+									],
+									"path": [
+										"api",
+										"v1",
+										"users",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "863. Ввод дефиса в начале имени",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 400\", function () {\r",
+											"    pm.response.to.have.status(400);\r",
+											"});"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"email\": \"-test@mail.ru\",\r\n  \"username\": \"Testica\",\r\n  \"password\": \"Qwerty123=\",\r\n  \"re_password\": \"Qwerty123=\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://89.23.117.168/api/v1/users/",
+									"protocol": "http",
+									"host": [
+										"89",
+										"23",
+										"117",
+										"168"
+									],
+									"path": [
+										"api",
+										"v1",
+										"users",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "864. Ввод дефиса в конце имени",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 400\", function () {\r",
+											"    pm.response.to.have.status(400);\r",
+											"});"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"email\": \"test-@mail.ru\",\r\n  \"username\": \"Testican\",\r\n  \"password\": \"Qwerty123=\",\r\n  \"re_password\": \"Qwerty123=\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://89.23.117.168/api/v1/users/",
+									"protocol": "http",
+									"host": [
+										"89",
+										"23",
+										"117",
+										"168"
+									],
+									"path": [
+										"api",
+										"v1",
+										"users",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "865. Ввод нижнего подчеркивания в конце имени",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 400\", function () {\r",
+											"    pm.response.to.have.status(400);\r",
+											"});"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"email\": \"test_@mail.ru\",\r\n  \"username\": \"Testican-qa\",\r\n  \"password\": \"Qwerty123=\",\r\n  \"re_password\": \"Qwerty123=\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://89.23.117.168/api/v1/users/",
+									"protocol": "http",
+									"host": [
+										"89",
+										"23",
+										"117",
+										"168"
+									],
+									"path": [
+										"api",
+										"v1",
+										"users",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "866. Ввод нижнего подчеркивания в начале имени",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 400\", function () {\r",
+											"    pm.response.to.have.status(400);\r",
+											"});"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"email\": \"_test@mail.ru\",\r\n  \"username\": \"Testican-QA\",\r\n  \"password\": \"Qwerty123=\",\r\n  \"re_password\": \"Qwerty123=\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://89.23.117.168/api/v1/users/",
+									"protocol": "http",
+									"host": [
+										"89",
+										"23",
+										"117",
+										"168"
+									],
+									"path": [
+										"api",
+										"v1",
+										"users",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "867. Ввод точки в начале имени",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 400\", function () {\r",
+											"    pm.response.to.have.status(400);\r",
+											"});"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"email\": \".test@mail.ru\",\r\n  \"username\": \"Test-QA\",\r\n  \"password\": \"Qwerty123=\",\r\n  \"re_password\": \"Qwerty123=\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://89.23.117.168/api/v1/users/",
+									"protocol": "http",
+									"host": [
+										"89",
+										"23",
+										"117",
+										"168"
+									],
+									"path": [
+										"api",
+										"v1",
+										"users",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "868. Ввод точки в конце имени",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 400\", function () {\r",
+											"    pm.response.to.have.status(400);\r",
+											"});"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"email\": \"test.@mail.ru\",\r\n  \"username\": \"Test-QA\",\r\n  \"password\": \"Qwerty123=\",\r\n  \"re_password\": \"Qwerty123=\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://89.23.117.168/api/v1/users/",
+									"protocol": "http",
+									"host": [
+										"89",
+										"23",
+										"117",
+										"168"
+									],
+									"path": [
+										"api",
+										"v1",
+										"users",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "869. Ввод 0 символов имени",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 400\", function () {\r",
+											"    pm.response.to.have.status(400);\r",
+											"});"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"email\": \"@mail.ru\",\r\n  \"username\": \"Test-QA\",\r\n  \"password\": \"Qwerty123=\",\r\n  \"re_password\": \"Qwerty123=\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://89.23.117.168/api/v1/users/",
+									"protocol": "http",
+									"host": [
+										"89",
+										"23",
+										"117",
+										"168"
+									],
+									"path": [
+										"api",
+										"v1",
+										"users",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "870. Ввод 65 символов имени",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 400\", function () {\r",
+											"    pm.response.to.have.status(400);\r",
+											"});"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"email\": \"testtesttesttesttesttesttesttesttesttesttesttesttesttesttesttestt@test.ru\",\r\n  \"username\": \"Test-QA\",\r\n  \"password\": \"Qwerty123=\",\r\n  \"re_password\": \"Qwerty123=\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://89.23.117.168/api/v1/users/",
+									"protocol": "http",
+									"host": [
+										"89",
+										"23",
+										"117",
+										"168"
+									],
+									"path": [
+										"api",
+										"v1",
+										"users",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "872. Ввод иероглифов в субдомене",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 400\", function () {\r",
+											"    pm.response.to.have.status(400);\r",
+											"});"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"email\": \"test@水木.te.ru\",\r\n  \"username\": \"Test_QAQ\",\r\n  \"password\": \"Qwerty123=\",\r\n  \"re_password\": \"Qwerty123=\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://89.23.117.168/api/v1/users/",
+									"protocol": "http",
+									"host": [
+										"89",
+										"23",
+										"117",
+										"168"
+									],
+									"path": [
+										"api",
+										"v1",
+										"users",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "873/874. Ввод дефиса в начале и  в конце субдомена",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 400\", function () {\r",
+											"    pm.response.to.have.status(400);\r",
+											"});"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"email\": \"test@-test-.te.ru\",\r\n  \"username\": \"Test-QAQ\",\r\n  \"password\": \"Qwerty123=\",\r\n  \"re_password\": \"Qwerty123=\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://89.23.117.168/api/v1/users/",
+									"protocol": "http",
+									"host": [
+										"89",
+										"23",
+										"117",
+										"168"
+									],
+									"path": [
+										"api",
+										"v1",
+										"users",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "875/876. Ввод дефиса в начале и  в конце домена",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 400\", function () {\r",
+											"    pm.response.to.have.status(400);\r",
+											"});"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"email\": \"test@-test-.ru\",\r\n  \"username\": \"Test-QAQ\",\r\n  \"password\": \"Qwerty123=\",\r\n  \"re_password\": \"Qwerty123=\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://89.23.117.168/api/v1/users/",
+									"protocol": "http",
+									"host": [
+										"89",
+										"23",
+										"117",
+										"168"
+									],
+									"path": [
+										"api",
+										"v1",
+										"users",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "877. Ввод домена без точки",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 400\", function () {\r",
+											"    pm.response.to.have.status(400);\r",
+											"});"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"email\": \"test@testru\",\r\n  \"username\": \"Test-QAQ\",\r\n  \"password\": \"Qwerty123=\",\r\n  \"re_password\": \"Qwerty123=\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://89.23.117.168/api/v1/users/",
+									"protocol": "http",
+									"host": [
+										"89",
+										"23",
+										"117",
+										"168"
+									],
+									"path": [
+										"api",
+										"v1",
+										"users",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "878. Ввод 0 символов в домене",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 400\", function () {\r",
+											"    pm.response.to.have.status(400);\r",
+											"});"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"email\": \"test@.ru\",\r\n  \"username\": \"Test-QAQ\",\r\n  \"password\": \"Qwerty123=\",\r\n  \"re_password\": \"Qwerty123=\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://89.23.117.168/api/v1/users/",
+									"protocol": "http",
+									"host": [
+										"89",
+										"23",
+										"117",
+										"168"
+									],
+									"path": [
+										"api",
+										"v1",
+										"users",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "879. Ввод 64 символов в домене",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 400\", function () {\r",
+											"    pm.response.to.have.status(400);\r",
+											"});"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"email\": \"test@testtesttesttesttesttesttesttesttesttesttesttesttesttesttesttes3.ru\",\r\n  \"username\": \"Test-QAQ\",\r\n  \"password\": \"Qwerty123=\",\r\n  \"re_password\": \"Qwerty123=\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://89.23.117.168/api/v1/users/",
+									"protocol": "http",
+									"host": [
+										"89",
+										"23",
+										"117",
+										"168"
+									],
+									"path": [
+										"api",
+										"v1",
+										"users",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "880. Ввод точки в начале домена",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 400\", function () {\r",
+											"    pm.response.to.have.status(400);\r",
+											"});"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"email\": \"test@.test.ru\",\r\n  \"username\": \"Test-QAQ\",\r\n  \"password\": \"Qwerty123=\",\r\n  \"re_password\": \"Qwerty123=\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://89.23.117.168/api/v1/users/",
+									"protocol": "http",
+									"host": [
+										"89",
+										"23",
+										"117",
+										"168"
+									],
+									"path": [
+										"api",
+										"v1",
+										"users",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "881. Ввод точки в конце домена",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 400\", function () {\r",
+											"    pm.response.to.have.status(400);\r",
+											"});"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"email\": \"test@test..ru\",\r\n  \"username\": \"Test-QAQ\",\r\n  \"password\": \"Qwerty123=\",\r\n  \"re_password\": \"Qwerty123=\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://89.23.117.168/api/v1/users/",
+									"protocol": "http",
+									"host": [
+										"89",
+										"23",
+										"117",
+										"168"
+									],
+									"path": [
+										"api",
+										"v1",
+										"users",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "882/883. Ввод точки в Начале и в конце субдомена",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 400\", function () {\r",
+											"    pm.response.to.have.status(400);\r",
+											"});"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"email\": \"test@.test..st.ru\",\r\n  \"username\": \"Test-QAQ\",\r\n  \"password\": \"Qwerty123=\",\r\n  \"re_password\": \"Qwerty123=\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://89.23.117.168/api/v1/users/",
+									"protocol": "http",
+									"host": [
+										"89",
+										"23",
+										"117",
+										"168"
+									],
+									"path": [
+										"api",
+										"v1",
+										"users",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "885. Ввод  иероглифов в домене",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 400\", function () {\r",
+											"    pm.response.to.have.status(400);\r",
+											"});"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"email\": \"test@test.水木.ru\",\r\n  \"username\": \"TestяQAQ\",\r\n  \"password\": \"Qwerty123=\",\r\n  \"re_password\": \"Qwerty123=\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://89.23.117.168/api/v1/users/",
+									"protocol": "http",
+									"host": [
+										"89",
+										"23",
+										"117",
+										"168"
+									],
+									"path": [
+										"api",
+										"v1",
+										"users",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "887. Ввод иероглифов в домене верхнего уровня",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 400\", function () {\r",
+											"    pm.response.to.have.status(400);\r",
+											"});"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"email\": \"test@test.水木\",\r\n  \"username\": \"TestZQAQ\",\r\n  \"password\": \"Qwerty123=\",\r\n  \"re_password\": \"Qwerty123=\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://89.23.117.168/api/v1/users/",
+									"protocol": "http",
+									"host": [
+										"89",
+										"23",
+										"117",
+										"168"
+									],
+									"path": [
+										"api",
+										"v1",
+										"users",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "888. Ввод дефиса в начале домена верхнего уровня",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 400\", function () {\r",
+											"    pm.response.to.have.status(400);\r",
+											"});"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"email\": \"test@test.-ru\",\r\n  \"username\": \"Test-QAQ\",\r\n  \"password\": \"Qwerty123=\",\r\n  \"re_password\": \"Qwerty123=\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://89.23.117.168/api/v1/users/",
+									"protocol": "http",
+									"host": [
+										"89",
+										"23",
+										"117",
+										"168"
+									],
+									"path": [
+										"api",
+										"v1",
+										"users",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "889. Ввод дефиса в конце домена верхнего уровня",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 400\", function () {\r",
+											"    pm.response.to.have.status(400);\r",
+											"});"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"email\": \"test@test.ru-\",\r\n  \"username\": \"Tesla\",\r\n  \"password\": \"Qwerty123=\",\r\n  \"re_password\": \"Qwerty123=\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://89.23.117.168/api/v1/users/",
+									"protocol": "http",
+									"host": [
+										"89",
+										"23",
+										"117",
+										"168"
+									],
+									"path": [
+										"api",
+										"v1",
+										"users",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "890/891. Ввод точки в начале и в конце домена верхнего уровня",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 400\", function () {\r",
+											"    pm.response.to.have.status(400);\r",
+											"});"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"email\": \"test@test..ru.\",\r\n  \"username\": \"Tesla\",\r\n  \"password\": \"Qwerty123=\",\r\n  \"re_password\": \"Qwerty123=\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://89.23.117.168/api/v1/users/",
+									"protocol": "http",
+									"host": [
+										"89",
+										"23",
+										"117",
+										"168"
+									],
+									"path": [
+										"api",
+										"v1",
+										"users",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "892. Ввод 0 символов в домен верхнего уровня",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 400\", function () {\r",
+											"    pm.response.to.have.status(400);\r",
+											"});"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"email\": \"test@test.\",\r\n  \"username\": \"Tesla\",\r\n  \"password\": \"Qwerty123=\",\r\n  \"re_password\": \"Qwerty123=\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://89.23.117.168/api/v1/users/",
+									"protocol": "http",
+									"host": [
+										"89",
+										"23",
+										"117",
+										"168"
+									],
+									"path": [
+										"api",
+										"v1",
+										"users",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "893. Ввод 1 символа в домен верхнего уровня",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 400\", function () {\r",
+											"    pm.response.to.have.status(400);\r",
+											"});"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"email\": \"test@test.r\",\r\n  \"username\": \"Tesla\",\r\n  \"password\": \"Qwerty123=\",\r\n  \"re_password\": \"Qwerty123=\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://89.23.117.168/api/v1/users/",
+									"protocol": "http",
+									"host": [
+										"89",
+										"23",
+										"117",
+										"168"
+									],
+									"path": [
+										"api",
+										"v1",
+										"users",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "894. Ввод 64 символа в домен верхнего уровня",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 400\", function () {\r",
+											"    pm.response.to.have.status(400);\r",
+											"});"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"email\": \"test@test.testtesttesttesttesttesttesttesttesttesttesttesttesttesttesttes2\",\r\n  \"username\": \"Tesla\",\r\n  \"password\": \"Qwerty123=\",\r\n  \"re_password\": \"Qwerty123=\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://89.23.117.168/api/v1/users/",
+									"protocol": "http",
+									"host": [
+										"89",
+										"23",
+										"117",
+										"168"
+									],
+									"path": [
+										"api",
+										"v1",
+										"users",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "895. Ввод 257 символа в поле",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 400\", function () {\r",
+											"    pm.response.to.have.status(400);\r",
+											"});"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"email\": \"testtesttesttesttesttesttesttesttesttesttesttesttesttesttesttest@testtesttesttesttesttesttesttesttesttesttesttesttesttesttesttes.testtesttesttesttesttesttesttesttesttesttesttesttesttesttesttes.testtesttesttesttesttesttesttesttesttesttesttesttesttesttesttest\",\r\n  \"username\": \"Tesla\",\r\n  \"password\": \"Qwerty123=\",\r\n  \"re_password\": \"Qwerty123=\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://89.23.117.168/api/v1/users/",
+									"protocol": "http",
+									"host": [
+										"89",
+										"23",
+										"117",
+										"168"
+									],
+									"path": [
+										"api",
+										"v1",
+										"users",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "896. Ввод 253 символа в доменной части",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 400\", function () {\r",
+											"    pm.response.to.have.status(400);\r",
+											"});"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"email\": \"te@testtesttesttesttesttesttesttesttesttesttesttesttesttesttesttes.testtesttesttesttesttesttesttesttesttesttesttesttesttesttesttes.testtesttesttesttesttesttesttesttesttesttesttesttesttesttesttes.testtesttesttesttesttesttesttesttesttesttesttesttesttesttt123\",\r\n  \"username\": \"Tesla5\",\r\n  \"password\": \"Qwerty123=\",\r\n  \"re_password\": \"Qwerty123=\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://89.23.117.168/api/v1/users/",
+									"protocol": "http",
+									"host": [
+										"89",
+										"23",
+										"117",
+										"168"
+									],
+									"path": [
+										"api",
+										"v1",
+										"users",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "897. Ввод 64 символа в субдомене",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 400\", function () {\r",
+											"    pm.response.to.have.status(400);\r",
+											"});"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"email\": \"test@testtesttesttesttesttesttesttesttesttesttesttesttesttesttesttes5.test.ru\",\r\n  \"username\": \"Tesla9\",\r\n  \"password\": \"Qwerty123=\",\r\n  \"re_password\": \"Qwerty123=\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://89.23.117.168/api/v1/users/",
+									"protocol": "http",
+									"host": [
+										"89",
+										"23",
+										"117",
+										"168"
+									],
+									"path": [
+										"api",
+										"v1",
+										"users",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "899/900. Ввод спец. символов в субдомене и в домене",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 400\", function () {\r",
+											"    pm.response.to.have.status(400);\r",
+											"});"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"email\": \"test@test%?.test*?.ru\",\r\n  \"username\": \"Tesla8\",\r\n  \"password\": \"Qwerty123=\",\r\n  \"re_password\": \"Qwerty123=\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://89.23.117.168/api/v1/users/",
+									"protocol": "http",
+									"host": [
+										"89",
+										"23",
+										"117",
+										"168"
+									],
+									"path": [
+										"api",
+										"v1",
+										"users",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "901. Ввод спец. символов в  домене верхнего уровня",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 400\", function () {\r",
+											"    pm.response.to.have.status(400);\r",
+											"});"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"email\": \"test@tes.test.ru&*\",\r\n  \"username\": \"Tesla7\",\r\n  \"password\": \"Qwerty123=\",\r\n  \"re_password\": \"Qwerty123=\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://89.23.117.168/api/v1/users/",
+									"protocol": "http",
+									"host": [
+										"89",
+										"23",
+										"117",
+										"168"
+									],
+									"path": [
+										"api",
+										"v1",
+										"users",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "902. Ввод 0 символов в  субдомене",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 400\", function () {\r",
+											"    pm.response.to.have.status(400);\r",
+											"});"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"email\": \"test@.test.ru\",\r\n  \"username\": \"Tesla7\",\r\n  \"password\": \"Qwerty123=\",\r\n  \"re_password\": \"Qwerty123=\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://89.23.117.168/api/v1/users/",
+									"protocol": "http",
+									"host": [
+										"89",
+										"23",
+										"117",
+										"168"
+									],
+									"path": [
+										"api",
+										"v1",
+										"users",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "1016. Проверка ввода уже существующего  email",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 400\", function () {\r",
+											"    pm.response.to.have.status(400);\r",
+											"});"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"email\": \"1artem2023@mail.ru\",\r\n  \"username\": \"ArtemP\",\r\n  \"password\": \"Qwerty123\",\r\n  \"re_password\": \"Qwerty123\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://89.23.117.168/api/v1/users/",
+									"protocol": "http",
+									"host": [
+										"89",
+										"23",
+										"117",
+										"168"
+									],
+									"path": [
+										"api",
+										"v1",
+										"users",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "1017. Поле пустое",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 400\", function () {\r",
+											"    pm.response.to.have.status(400);\r",
+											"});"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"email\": \"\",\r\n  \"username\": \"Tesla7\",\r\n  \"password\": \"Qwerty123=\",\r\n  \"re_password\": \"Qwerty123=\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://89.23.117.168/api/v1/users/",
+									"protocol": "http",
+									"host": [
+										"89",
+										"23",
+										"117",
+										"168"
+									],
+									"path": [
+										"api",
+										"v1",
+										"users",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "1018. Проверка схемы JSON: INTEGER",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 400\", function () {\r",
+											"    pm.response.to.have.status(400);\r",
+											"});"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"email\": 123,\r\n  \"username\": \"Фаина\",\r\n  \"password\": \"Qwerty123\",\r\n  \"re_password\": \"Qwerty123\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://89.23.117.168/api/v1/users/",
+									"protocol": "http",
+									"host": [
+										"89",
+										"23",
+										"117",
+										"168"
+									],
+									"path": [
+										"api",
+										"v1",
+										"users",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "1019. Проверка схемы JSON: boolean",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 400\", function () {\r",
+											"    pm.response.to.have.status(400);\r",
+											"});"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"email\": false,\r\n  \"username\": \"Фаина\",\r\n  \"password\": \"Qwerty123\",\r\n  \"re_password\": \"Qwerty123\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://89.23.117.168/api/v1/users/",
+									"protocol": "http",
+									"host": [
+										"89",
+										"23",
+										"117",
+										"168"
+									],
+									"path": [
+										"api",
+										"v1",
+										"users",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "1129. Проверка sql-запроса",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 400\", function () {\r",
+											"    pm.response.to.have.status(400);\r",
+											"});"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"email\": select*from,\r\n  \"username\": \"Фаина\",\r\n  \"password\": \"Qwerty123\",\r\n  \"re_password\": \"Qwerty123\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://89.23.117.168/api/v1/users/",
+									"protocol": "http",
+									"host": [
+										"89",
+										"23",
+										"117",
+										"168"
+									],
+									"path": [
+										"api",
+										"v1",
+										"users",
+										""
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Никнейм Валидация_позитивная",
+					"item": [
+						{
+							"name": "904.  Ввод 2х символов",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 201\", function () {\r",
+											"    pm.response.to.have.status(201);\r",
+											"});"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"email\": \"tester@test.ru\",\r\n  \"username\": \"yk\",\r\n  \"password\": \"Qaz963*1\",\r\n  \"re_password\": \"Qaz963*1\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://89.23.117.168/api/v1/users/",
+									"protocol": "http",
+									"host": [
+										"89",
+										"23",
+										"117",
+										"168"
+									],
+									"path": [
+										"api",
+										"v1",
+										"users",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "903.  Ввод 3х символов",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 201\", function () {\r",
+											"    pm.response.to.have.status(201);\r",
+											"});"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"email\": \"testerQ@test.ru\",\r\n  \"username\": \"yka\",\r\n  \"password\": \"Qaz963*1\",\r\n  \"re_password\": \"Qaz963*1\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://89.23.117.168/api/v1/users/",
+									"protocol": "http",
+									"host": [
+										"89",
+										"23",
+										"117",
+										"168"
+									],
+									"path": [
+										"api",
+										"v1",
+										"users",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "905.  Ввод 11 символов",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 201\", function () {\r",
+											"    pm.response.to.have.status(201);\r",
+											"});"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"email\": \"QtesterQ@test.ru\",\r\n  \"username\": \"yulkuzztest\",\r\n  \"password\": \"Qaz963*1\",\r\n  \"re_password\": \"Qaz963*1\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://89.23.117.168/api/v1/users/",
+									"protocol": "http",
+									"host": [
+										"89",
+										"23",
+										"117",
+										"168"
+									],
+									"path": [
+										"api",
+										"v1",
+										"users",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "906.  Ввод 29 символов",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 201\", function () {\r",
+											"    pm.response.to.have.status(201);\r",
+											"});"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"email\": \"testerQ2@test.ru\",\r\n  \"username\": \"yulkuzztestyulkuzztestqwertyu\",\r\n  \"password\": \"Qaz963*1\",\r\n  \"re_password\": \"Qaz963*1\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://89.23.117.168/api/v1/users/",
+									"protocol": "http",
+									"host": [
+										"89",
+										"23",
+										"117",
+										"168"
+									],
+									"path": [
+										"api",
+										"v1",
+										"users",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "907.  Ввод 30 символов",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 201\", function () {\r",
+											"    pm.response.to.have.status(201);\r",
+											"});"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"email\": \"tester2@test.ru\",\r\n  \"username\": \"yulkuzztestyulkuzztestqwertyui\",\r\n  \"password\": \"Qaz963*1\",\r\n  \"re_password\": \"Qaz963*1\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://89.23.117.168/api/v1/users/",
+									"protocol": "http",
+									"host": [
+										"89",
+										"23",
+										"117",
+										"168"
+									],
+									"path": [
+										"api",
+										"v1",
+										"users",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "908/909/910/911.  Ввод кириллицы, латиницыб дефиса и цифр",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 201\", function () {\r",
+											"    pm.response.to.have.status(201);\r",
+											"});"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"email\": \"testerQ2Q@test.ru\",\r\n  \"username\": \"marya-мария84\",\r\n  \"password\": \"Qaz963*1\",\r\n  \"re_password\": \"Qaz963*1\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://89.23.117.168/api/v1/users/",
+									"protocol": "http",
+									"host": [
+										"89",
+										"23",
+										"117",
+										"168"
+									],
+									"path": [
+										"api",
+										"v1",
+										"users",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "912/913.  Ввод точки и нижнего подчеркивания",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 201\", function () {\r",
+											"    pm.response.to.have.status(201);\r",
+											"});"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"email\": \"testQ@test.ru\",\r\n  \"username\": \"marya.ivan_ova\",\r\n  \"password\": \"Qaz963*1\",\r\n  \"re_password\": \"Qaz963*1\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://89.23.117.168/api/v1/users/",
+									"protocol": "http",
+									"host": [
+										"89",
+										"23",
+										"117",
+										"168"
+									],
+									"path": [
+										"api",
+										"v1",
+										"users",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "1021.  Ввод INTEGER",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 201\", function () {\r",
+											"    pm.response.to.have.status(201);\r",
+											"});"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"email\": \"testQ4@test.ru\",\r\n  \"username\": 123,\r\n  \"password\": \"Qaz963*1\",\r\n  \"re_password\": \"Qaz963*1\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://89.23.117.168/api/v1/users/",
+									"protocol": "http",
+									"host": [
+										"89",
+										"23",
+										"117",
+										"168"
+									],
+									"path": [
+										"api",
+										"v1",
+										"users",
+										""
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Никнейм Валидация_негативная",
+					"item": [
+						{
+							"name": "951.  Пустое поле",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 400\", function () {\r",
+											"    pm.response.to.have.status(400);\r",
+											"});"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"email\": \"testQ@test.ru\",\r\n  \"username\": \"\",\r\n  \"password\": \"Qaz963*1\",\r\n  \"re_password\": \"Qaz963*1\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://89.23.117.168/api/v1/users/",
+									"protocol": "http",
+									"host": [
+										"89",
+										"23",
+										"117",
+										"168"
+									],
+									"path": [
+										"api",
+										"v1",
+										"users",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "952.  Ввод 31 символа",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 400\", function () {\r",
+											"    pm.response.to.have.status(400);\r",
+											"});"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"email\": \"testQ@test.ru\",\r\n  \"username\": \"ykuzztesttestkuzzkuzztestqwerty\",\r\n  \"password\": \"Qaz963*1\",\r\n  \"re_password\": \"Qaz963*1\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://89.23.117.168/api/v1/users/",
+									"protocol": "http",
+									"host": [
+										"89",
+										"23",
+										"117",
+										"168"
+									],
+									"path": [
+										"api",
+										"v1",
+										"users",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "953.  Ввод 1 символа",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 400\", function () {\r",
+											"    pm.response.to.have.status(400);\r",
+											"});"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"email\": \"testQ3@tezt.ru\",\r\n  \"username\": \"з\",\r\n  \"password\": \"Qaz963*1\",\r\n  \"re_password\": \"Qaz963*1\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://89.23.117.168/api/v1/users/",
+									"protocol": "http",
+									"host": [
+										"89",
+										"23",
+										"117",
+										"168"
+									],
+									"path": [
+										"api",
+										"v1",
+										"users",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "954.  Ввод  символов на иврите",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 400\", function () {\r",
+											"    pm.response.to.have.status(400);\r",
+											"});"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"email\": \"testQ3Q@test.ru\",\r\n  \"username\": \"בטלנה\",\r\n  \"password\": \"Qaz963*1\",\r\n  \"re_password\": \"Qaz963*1\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://89.23.117.168/api/v1/users/",
+									"protocol": "http",
+									"host": [
+										"89",
+										"23",
+										"117",
+										"168"
+									],
+									"path": [
+										"api",
+										"v1",
+										"users",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "955.  Ввод  трёх пробелов",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 400\", function () {\r",
+											"    pm.response.to.have.status(400);\r",
+											"});"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"email\": \"testQ3Q@test.ru\",\r\n  \"username\": \"   \",\r\n  \"password\": \"Qaz963*1\",\r\n  \"re_password\": \"Qaz963*1\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://89.23.117.168/api/v1/users/",
+									"protocol": "http",
+									"host": [
+										"89",
+										"23",
+										"117",
+										"168"
+									],
+									"path": [
+										"api",
+										"v1",
+										"users",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "956.  Ввод  спецсимволов",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 400\", function () {\r",
+											"    pm.response.to.have.status(400);\r",
+											"});"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"email\": \"testQ3A@test.ru\",\r\n  \"username\": \"%?**&\",\r\n  \"password\": \"Qaz963*1\",\r\n  \"re_password\": \"Qaz963*1\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://89.23.117.168/api/v1/users/",
+									"protocol": "http",
+									"host": [
+										"89",
+										"23",
+										"117",
+										"168"
+									],
+									"path": [
+										"api",
+										"v1",
+										"users",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "957.  Ввод уже существующего никнейма",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 400\", function () {\r",
+											"    pm.response.to.have.status(400);\r",
+											"});"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"email\": \"testQ3A@test.ru\",\r\n  \"username\": \"marya-мария84\",\r\n  \"password\": \"Qaz963*1\",\r\n  \"re_password\": \"Qaz963*1\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://89.23.117.168/api/v1/users/",
+									"protocol": "http",
+									"host": [
+										"89",
+										"23",
+										"117",
+										"168"
+									],
+									"path": [
+										"api",
+										"v1",
+										"users",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "1022.  Ввод boolean",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 400\", function () {\r",
+											"    pm.response.to.have.status(400);\r",
+											"});"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"email\": \"testQ4Q@test.ru\",\r\n  \"username\": true,\r\n  \"password\": \"Qaz963*1\",\r\n  \"re_password\": \"Qaz963*1\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://89.23.117.168/api/v1/users/",
+									"protocol": "http",
+									"host": [
+										"89",
+										"23",
+										"117",
+										"168"
+									],
+									"path": [
+										"api",
+										"v1",
+										"users",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "1130.  Ввод sql-запроса",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 400\", function () {\r",
+											"    pm.response.to.have.status(400);\r",
+											"});"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"email\": \"testQ4Q@test.ru\",\r\n  \"username\": select*,\r\n  \"password\": \"Qaz963*1\",\r\n  \"re_password\": \"Qaz963*1\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://89.23.117.168/api/v1/users/",
+									"protocol": "http",
+									"host": [
+										"89",
+										"23",
+										"117",
+										"168"
+									],
+									"path": [
+										"api",
+										"v1",
+										"users",
+										""
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Пароль Валидация_позитивная",
+					"item": [
+						{
+							"name": "958.  Ввод кириллицы",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 201\", function () {\r",
+											"    pm.response.to.have.status(201);\r",
+											"});"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"email\": \"testerZ@test.ru\",\r\n  \"username\": \"Tesst\",\r\n  \"password\": \"дЬЗДзфФц\",\r\n  \"re_password\": \"дЬЗДзфФц\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://89.23.117.168/api/v1/users/",
+									"protocol": "http",
+									"host": [
+										"89",
+										"23",
+										"117",
+										"168"
+									],
+									"path": [
+										"api",
+										"v1",
+										"users",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "959/960/961/962.  Ввод 8 символов: латиницы, цифр и спец.символов",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 201\", function () {\r",
+											"    pm.response.to.have.status(201);\r",
+											"});"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"email\": \"testerZ1@test.ru\",\r\n  \"username\": \"Tesst1\",\r\n  \"password\": \"wer56&*%\",\r\n  \"re_password\": \"wer56&*%\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://89.23.117.168/api/v1/users/",
+									"protocol": "http",
+									"host": [
+										"89",
+										"23",
+										"117",
+										"168"
+									],
+									"path": [
+										"api",
+										"v1",
+										"users",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "963.  Ввод 9 символоВ",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 201\", function () {\r",
+											"    pm.response.to.have.status(201);\r",
+											"});"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"email\": \"testerZ12@test.ru\",\r\n  \"username\": \"Tes32\",\r\n  \"password\": \"wer56&*%a\",\r\n  \"re_password\": \"wer56&*%a\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://89.23.117.168/api/v1/users/",
+									"protocol": "http",
+									"host": [
+										"89",
+										"23",
+										"117",
+										"168"
+									],
+									"path": [
+										"api",
+										"v1",
+										"users",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "963/1.  Похож на имя пользователя",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 201\", function () {\r",
+											"    pm.response.to.have.status(201);\r",
+											"});"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"email\": \"testerZ12@test.ru\",\r\n  \"username\": \"Tes32p\",\r\n  \"password\": \"Tes32p1\",\r\n  \"re_password\": \"wer56&*%a\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://89.23.117.168/api/v1/users/",
+									"protocol": "http",
+									"host": [
+										"89",
+										"23",
+										"117",
+										"168"
+									],
+									"path": [
+										"api",
+										"v1",
+										"users",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "964.  Ввод 19 символоВ",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 201\", function () {\r",
+											"    pm.response.to.have.status(201);\r",
+											"});"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"email\": \"QtesterZ12@test.ru\",\r\n  \"username\": \"Tes32-qa\",\r\n  \"password\": \":~ykУ%ш=ЭЧгЙNZДxФse\",\r\n  \"re_password\": \":~ykУ%ш=ЭЧгЙNZДxФse\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://89.23.117.168/api/v1/users/",
+									"protocol": "http",
+									"host": [
+										"89",
+										"23",
+										"117",
+										"168"
+									],
+									"path": [
+										"api",
+										"v1",
+										"users",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "965.  Ввод 20 символоВ",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 201\", function () {\r",
+											"    pm.response.to.have.status(201);\r",
+											"});"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"email\": \"Q-testerZ12@test.ru\",\r\n  \"username\": \"Tes32-qaq\",\r\n  \"password\": \":~ykУ%ш=ЭЧгЙNZДxФseq\",\r\n  \"re_password\": \":~ykУ%ш=ЭЧгЙNZДxФseq\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://89.23.117.168/api/v1/users/",
+									"protocol": "http",
+									"host": [
+										"89",
+										"23",
+										"117",
+										"168"
+									],
+									"path": [
+										"api",
+										"v1",
+										"users",
+										""
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Пароль Валидация_негативная",
+					"item": [
+						{
+							"name": "968.  Пустое поле",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 400\", function () {\r",
+											"    pm.response.to.have.status(400);\r",
+											"});"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"email\": \"Q_testerZ12@test.ru\",\r\n  \"username\": \"Tes32_qaq\",\r\n  \"password\": \"\",\r\n  \"re_password\": \":~ykУ%ш=ЭЧгЙNZДxФseq\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://89.23.117.168/api/v1/users/",
+									"protocol": "http",
+									"host": [
+										"89",
+										"23",
+										"117",
+										"168"
+									],
+									"path": [
+										"api",
+										"v1",
+										"users",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "969/971.  Ввод 7 символов, в том числе иерогиф",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 400\", function () {\r",
+											"    pm.response.to.have.status(400);\r",
+											"});"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"email\": \"Q_testerZ12@test.ru\",\r\n  \"username\": \"Tesя32_qaq\",\r\n  \"password\": \"水木qwe23\",\r\n  \"re_password\": \":~ykУ%ш=ЭЧгЙNZДxФseq\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://89.23.117.168/api/v1/users/",
+									"protocol": "http",
+									"host": [
+										"89",
+										"23",
+										"117",
+										"168"
+									],
+									"path": [
+										"api",
+										"v1",
+										"users",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "972  Ввод 21 символа",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 400\", function () {\r",
+											"    pm.response.to.have.status(400);\r",
+											"});"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"email\": \"Q_t-esterZ12@test.ru\",\r\n  \"username\": \"Tes-32_qaq\",\r\n  \"password\": \"d?388oQXJvKxzo6#2rn9*\",\r\n  \"re_password\": \"d?388oQXJvKxzo6#2rn9*\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://89.23.117.168/api/v1/users/",
+									"protocol": "http",
+									"host": [
+										"89",
+										"23",
+										"117",
+										"168"
+									],
+									"path": [
+										"api",
+										"v1",
+										"users",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "974  Ввод пробелов в поле",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 400\", function () {\r",
+											"    pm.response.to.have.status(400);\r",
+											"});"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"email\": \"Q_t-esterZ12@test.ru\",\r\n  \"username\": \"Tes-32_qaq\",\r\n  \"password\": \"d?388oQXJv K\",\r\n  \"re_password\": \"d?388oQXJv K\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://89.23.117.168/api/v1/users/",
+									"protocol": "http",
+									"host": [
+										"89",
+										"23",
+										"117",
+										"168"
+									],
+									"path": [
+										"api",
+										"v1",
+										"users",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "1023.  Ввод INTEGER",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 400\", function () {\r",
+											"    pm.response.to.have.status(400);\r",
+											"});"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"email\": \"Q_t-esterZ12@test.ru\",\r\n  \"username\": \"Tes-32_qaq\",\r\n  \"password\": 123456789235679,\r\n  \"re_password\": \"d?388oQXJv K\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://89.23.117.168/api/v1/users/",
+									"protocol": "http",
+									"host": [
+										"89",
+										"23",
+										"117",
+										"168"
+									],
+									"path": [
+										"api",
+										"v1",
+										"users",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "1024.  Ввод boolean",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 400\", function () {\r",
+											"    pm.response.to.have.status(400);\r",
+											"});"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"email\": \"Q_t-esterZ12@test.ru\",\r\n  \"username\": \"Tes-32_qaq\",\r\n  \"password\": false,\r\n  \"re_password\": \"d?388oQXJv K\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://89.23.117.168/api/v1/users/",
+									"protocol": "http",
+									"host": [
+										"89",
+										"23",
+										"117",
+										"168"
+									],
+									"path": [
+										"api",
+										"v1",
+										"users",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "1131.  Ввод sql-запроса",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 400\", function () {\r",
+											"    pm.response.to.have.status(400);\r",
+											"});"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"email\": \"testQ4Q@test.ru\",\r\n  \"username\": \"Selesta\",\r\n  \"password\": \"select*from user\",\r\n  \"re_password\": \"Qaz963*1\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://89.23.117.168/api/v1/users/",
+									"protocol": "http",
+									"host": [
+										"89",
+										"23",
+										"117",
+										"168"
+									],
+									"path": [
+										"api",
+										"v1",
+										"users",
+										""
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Пароль еще раз Валидация_позитивная",
+					"item": [
+						{
+							"name": "990.  Ввод кириллицы Copy",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 201\", function () {\r",
+											"    pm.response.to.have.status(201);\r",
+											"});"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"email\": \"tester-Z@test.ru\",\r\n  \"username\": \"Tesst9\",\r\n  \"password\": \"дЬЗДзфФц\",\r\n  \"re_password\": \"дЬЗДзфФц\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://89.23.117.168/api/v1/users/",
+									"protocol": "http",
+									"host": [
+										"89",
+										"23",
+										"117",
+										"168"
+									],
+									"path": [
+										"api",
+										"v1",
+										"users",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "991/992/993/994  Ввод 8 символов: латиницы, цифр и спец.символов",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 201\", function () {\r",
+											"    pm.response.to.have.status(201);\r",
+											"});"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"email\": \"tester-Z1@test.ru\",\r\n  \"username\": \"Tesst-1\",\r\n  \"password\": \"wer56&*%\",\r\n  \"re_password\": \"wer56&*%\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://89.23.117.168/api/v1/users/",
+									"protocol": "http",
+									"host": [
+										"89",
+										"23",
+										"117",
+										"168"
+									],
+									"path": [
+										"api",
+										"v1",
+										"users",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "995.  Ввод 9 символов",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 201\", function () {\r",
+											"    pm.response.to.have.status(201);\r",
+											"});"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"email\": \"Y-tester-Z12@test.ru\",\r\n  \"username\": \"TesQ89\",\r\n  \"password\": \"wer56&*%a\",\r\n  \"re_password\": \"wer56&*%a\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://89.23.117.168/api/v1/users/",
+									"protocol": "http",
+									"host": [
+										"89",
+										"23",
+										"117",
+										"168"
+									],
+									"path": [
+										"api",
+										"v1",
+										"users",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "996.  Ввод 19 символов",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 201\", function () {\r",
+											"    pm.response.to.have.status(201);\r",
+											"});"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"email\": \"QtesteZ12@test.ru\",\r\n  \"username\": \"Tes.32-qa\",\r\n  \"password\": \":~ykУ%ш=ЭЧгЙNZДxФse\",\r\n  \"re_password\": \":~ykУ%ш=ЭЧгЙNZДxФse\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://89.23.117.168/api/v1/users/",
+									"protocol": "http",
+									"host": [
+										"89",
+										"23",
+										"117",
+										"168"
+									],
+									"path": [
+										"api",
+										"v1",
+										"users",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "997.  Ввод 20 символов",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 201\", function () {\r",
+											"    pm.response.to.have.status(201);\r",
+											"});"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"email\": \"QA-testerZ12@test.ru\",\r\n  \"username\": \"Tes3-qaq\",\r\n  \"password\": \":~ykУ%ш=ЭЧгЙNZДxФseq\",\r\n  \"re_password\": \":~ykУ%ш=ЭЧгЙNZДxФseq\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://89.23.117.168/api/v1/users/",
+									"protocol": "http",
+									"host": [
+										"89",
+										"23",
+										"117",
+										"168"
+									],
+									"path": [
+										"api",
+										"v1",
+										"users",
+										""
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Пароль еще раз Валидация_негативная",
+					"item": [
+						{
+							"name": "998.  Пустое поле",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 400\", function () {\r",
+											"    pm.response.to.have.status(400);\r",
+											"});"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"email\": \"Q_testerZ12@test.ru\",\r\n  \"username\": \"Tes32_qaq\",\r\n  \"password\": \"qwerty123\",\r\n  \"re_password\": \"\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://89.23.117.168/api/v1/users/",
+									"protocol": "http",
+									"host": [
+										"89",
+										"23",
+										"117",
+										"168"
+									],
+									"path": [
+										"api",
+										"v1",
+										"users",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "999/1000.  Ввод 7 символов, в том числе иерогиф",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 400\", function () {\r",
+											"    pm.response.to.have.status(400);\r",
+											"});"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"email\": \"Q_testerZ12@test.ru\",\r\n  \"username\": \"Tes_qaq\",\r\n  \"password\": \"水木qwe23\",\r\n  \"re_password\": \"水木qwe23\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://89.23.117.168/api/v1/users/",
+									"protocol": "http",
+									"host": [
+										"89",
+										"23",
+										"117",
+										"168"
+									],
+									"path": [
+										"api",
+										"v1",
+										"users",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "1001.  Ввод 21 символа",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 400\", function () {\r",
+											"    pm.response.to.have.status(400);\r",
+											"});"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"email\": \"Q_t-esterZ12@test.ru\",\r\n  \"username\": \"Tes-32_qaq\",\r\n  \"password\": \"d?388oQXJvKxzo6#2rn9*\",\r\n  \"re_password\": \"d?388oQXJvKxzo6#2rn9*\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://89.23.117.168/api/v1/users/",
+									"protocol": "http",
+									"host": [
+										"89",
+										"23",
+										"117",
+										"168"
+									],
+									"path": [
+										"api",
+										"v1",
+										"users",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "1002.  Ввод пробелов в поле",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 400\", function () {\r",
+											"    pm.response.to.have.status(400);\r",
+											"});"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"email\": \"Q_t-esterZ12@test.ru\",\r\n  \"username\": \"Tes-32_qaq\",\r\n  \"password\": \"d?388oQXJv K\",\r\n  \"re_password\": \"d?388oQXJv K\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://89.23.117.168/api/v1/users/",
+									"protocol": "http",
+									"host": [
+										"89",
+										"23",
+										"117",
+										"168"
+									],
+									"path": [
+										"api",
+										"v1",
+										"users",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "1025.  Ввод INTEGER",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 400\", function () {\r",
+											"    pm.response.to.have.status(400);\r",
+											"});"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"email\": \"Q_t-esterZ12@test.ru\",\r\n  \"username\": \"Tes-32_qaq\",\r\n  \"password\": 123456789235679,\r\n  \"re_password\": 123456789235679\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://89.23.117.168/api/v1/users/",
+									"protocol": "http",
+									"host": [
+										"89",
+										"23",
+										"117",
+										"168"
+									],
+									"path": [
+										"api",
+										"v1",
+										"users",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "1026.  Ввод boolean",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 400\", function () {\r",
+											"    pm.response.to.have.status(400);\r",
+											"});"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"email\": \"Q_t-esterZ12@test.ru\",\r\n  \"username\": \"Tes-32_qaq\",\r\n  \"password\": false,\r\n  \"re_password\": false\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://89.23.117.168/api/v1/users/",
+									"protocol": "http",
+									"host": [
+										"89",
+										"23",
+										"117",
+										"168"
+									],
+									"path": [
+										"api",
+										"v1",
+										"users",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "1132.  Ввод sql-запроса",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 400\", function () {\r",
+											"    pm.response.to.have.status(400);\r",
+											"});"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"email\": \"testQ4Q@test.ru\",\r\n  \"username\": \"Selesta\",\r\n  \"password\": \"select*from\",\r\n  \"re_password\": select*from\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://89.23.117.168/api/v1/users/",
+									"protocol": "http",
+									"host": [
+										"89",
+										"23",
+										"117",
+										"168"
+									],
+									"path": [
+										"api",
+										"v1",
+										"users",
+										""
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "User te-st@test.ru",
+					"item": [
+						{
+							"name": "Авторизация по почте и паролю",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Token successfully updated\", function () {\r",
+											"    var jsonData = pm.response.json();\r",
+											"    pm.environment.set(\"token_te-st\", jsonData.auth_token);\r",
+											"});\r",
+											"pm.test(\"Status code is 200\", function () {\r",
+											"    pm.response.to.have.status(200);\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"password\": \"Qaz963*1\",\r\n  \"email\": \"te-st@test.ru\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://89.23.117.168/api/v1/token/login/",
+									"protocol": "http",
+									"host": [
+										"89",
+										"23",
+										"117",
+										"168"
+									],
+									"path": [
+										"api",
+										"v1",
+										"token",
+										"login",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Получение вьюсет пользователя",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"id successfully assigned\", function () {\r",
+											"    var jsonData = pm.response.json();\r",
+											"    pm.environment.set(\"te-st@test.ru_id\", jsonData.id);\r",
+											"});\r",
+											"pm.test(\"Status code is 200\", function () {\r",
+											"    pm.response.to.have.status(200);\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "token {{token_te-st}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "http://89.23.117.168/api/v1/users/me",
+									"protocol": "http",
+									"host": [
+										"89",
+										"23",
+										"117",
+										"168"
+									],
+									"path": [
+										"api",
+										"v1",
+										"users",
+										"me"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Получение пользователя по id",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {\r",
+											"    pm.response.to.have.status(200);\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "token {{token_te-st}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "http://89.23.117.168/api/v1/users/11/",
+									"protocol": "http",
+									"host": [
+										"89",
+										"23",
+										"117",
+										"168"
+									],
+									"path": [
+										"api",
+										"v1",
+										"users",
+										"11",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Изменение данных пользователя id",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {\r",
+											"    pm.response.to.have.status(200);\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "token {{token_te-st}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"username\": \"ArtemPer\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://89.23.117.168/api/v1/users/11/",
+									"protocol": "http",
+									"host": [
+										"89",
+										"23",
+										"117",
+										"168"
+									],
+									"path": [
+										"api",
+										"v1",
+										"users",
+										"11",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Удаление пользователя",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {\r",
+											"    pm.response.to.have.status(200);\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "token {{token_te-st}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://89.23.117.168/api/v1/users/11/",
+									"protocol": "http",
+									"host": [
+										"89",
+										"23",
+										"117",
+										"168"
+									],
+									"path": [
+										"api",
+										"v1",
+										"users",
+										"11",
+										""
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "User matrasoff8@test.ru",
+					"item": [
+						{
+							"name": "Авторизация по почте и паролю",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Token successfully updated\", function () {\r",
+											"    var jsonData = pm.response.json();\r",
+											"    pm.environment.set(\"token17\", jsonData.auth_token);\r",
+											"});\r",
+											"pm.test(\"Status code is 200\", function () {\r",
+											"    pm.response.to.have.status(200);\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"password\": \"Qaz963*1\",\r\n  \"email\": \"matrasoff8@test.ru\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://89.23.117.168/api/v1/token/login/",
+									"protocol": "http",
+									"host": [
+										"89",
+										"23",
+										"117",
+										"168"
+									],
+									"path": [
+										"api",
+										"v1",
+										"token",
+										"login",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Получение вьюсет пользователя",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"id successfully assigned\", function () {\r",
+											"    var jsonData = pm.response.json();\r",
+											"    pm.environment.set(\"matrasoff8@test.ru_id\", jsonData.id);\r",
+											"});\r",
+											"pm.test(\"Status code is 200\", function () {\r",
+											"    pm.response.to.have.status(200);\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "token {{token17}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "http://89.23.117.168/api/v1/users/me",
+									"protocol": "http",
+									"host": [
+										"89",
+										"23",
+										"117",
+										"168"
+									],
+									"path": [
+										"api",
+										"v1",
+										"users",
+										"me"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Получение пользователя по id",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {\r",
+											"    pm.response.to.have.status(200);\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "token {{token17}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "http://89.23.117.168/api/v1/users/17/",
+									"protocol": "http",
+									"host": [
+										"89",
+										"23",
+										"117",
+										"168"
+									],
+									"path": [
+										"api",
+										"v1",
+										"users",
+										"17",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Изменение данных пользователя",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"username\": \"ArtemPer\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://89.23.117.168/api/v1/users/11/",
+									"protocol": "http",
+									"host": [
+										"89",
+										"23",
+										"117",
+										"168"
+									],
+									"path": [
+										"api",
+										"v1",
+										"users",
+										"11",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Удаление пользователя по id",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {\r",
+											"    pm.response.to.have.status(200);\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "token {{token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://89.23.117.168/api/v1/users/17/",
+									"protocol": "http",
+									"host": [
+										"89",
+										"23",
+										"117",
+										"168"
+									],
+									"path": [
+										"api",
+										"v1",
+										"users",
+										"17",
+										""
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "User 1artem2023@mail.ru",
+					"item": [
+						{
+							"name": "Авторизация по почте и паролю (id3)",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Token successfully updated\", function () {\r",
+											"    var jsonData = pm.response.json();\r",
+											"    pm.environment.set(\"token\", jsonData.auth_token);\r",
+											"});\r",
+											"pm.test(\"Status code is 200\", function () {\r",
+											"    pm.response.to.have.status(200);\r",
+											"});\r",
+											"\r",
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"password\": \"Qwerty12%\",\r\n  \"email\": \"1artem2023@mail.ru\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://89.23.117.168/api/v1/token/login/",
+									"protocol": "http",
+									"host": [
+										"89",
+										"23",
+										"117",
+										"168"
+									],
+									"path": [
+										"api",
+										"v1",
+										"token",
+										"login",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Получение пользователя по id=3",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {\r",
+											"    pm.response.to.have.status(200);\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "token {{token}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "http://89.23.117.168/api/v1/users/3/",
+									"protocol": "http",
+									"host": [
+										"89",
+										"23",
+										"117",
+										"168"
+									],
+									"path": [
+										"api",
+										"v1",
+										"users",
+										"3",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Частичное изменение данных пользователя",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {\r",
+											"    pm.response.to.have.status(200);\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "PATCH",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "token {{token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"username\": \"ArtemPer Test\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://89.23.117.168/api/v1/users/3/",
+									"protocol": "http",
+									"host": [
+										"89",
+										"23",
+										"117",
+										"168"
+									],
+									"path": [
+										"api",
+										"v1",
+										"users",
+										"3",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Удаление пользователя по id",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {\r",
+											"    pm.response.to.have.status(200);\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "token {{token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://89.23.117.168/api/v1/users/3/",
+									"protocol": "http",
+									"host": [
+										"89",
+										"23",
+										"117",
+										"168"
+									],
+									"path": [
+										"api",
+										"v1",
+										"users",
+										"3",
+										""
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Projects",
+			"item": [
+				{
+					"name": "1133. Получение списка проектов",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://89.23.117.168/api/v1/projects/",
+							"protocol": "http",
+							"host": [
+								"89",
+								"23",
+								"117",
+								"168"
+							],
+							"path": [
+								"api",
+								"v1",
+								"projects",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "1252. Получение превью проектов на странице",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"pm.test(\"X-Powered-By is not present\", function () {\r",
+									"    pm.response.to.have.not.header(\"X-Powered-By\");\r",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://89.23.117.168/api/v1/projects/preview_main/",
+							"protocol": "http",
+							"host": [
+								"89",
+								"23",
+								"117",
+								"168"
+							],
+							"path": [
+								"api",
+								"v1",
+								"projects",
+								"preview_main",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "1253. Получение превью проектов по id 1",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"pm.test(\"X-Powered-By is not present\", function () {\r",
+									"    pm.response.to.have.not.header(\"X-Powered-By\");\r",
+									"});\r",
+									"pm.test(\"Response time is less than 1000ms\", function () {\r",
+									"    pm.expect(pm.response.responseTime).to.be.below(1000);\r",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://89.23.117.168/api/v1/projects/1/",
+							"protocol": "http",
+							"host": [
+								"89",
+								"23",
+								"117",
+								"168"
+							],
+							"path": [
+								"api",
+								"v1",
+								"projects",
+								"1",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "1254. Получение превью проекта",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"pm.test(\"X-Powered-By is not present\", function () {\r",
+									"    pm.response.to.have.not.header(\"X-Powered-By\");\r",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"name\": \"string\",\r\n  \"description\": \"string\",\r\n  \"started\": \"2024-03-22\",\r\n  \"ended\": \"2024-03-22\",\r\n  \"creator\": 0,\r\n  \"owner\": 0,\r\n  \"project_specialists\": [\r\n    {\r\n      \"specialist\": {\r\n        \"name\": \"string\",\r\n        \"specialization\": {\r\n          \"name\": \"string\"\r\n        }\r\n      },\r\n      \"skills\": [\r\n        {\r\n          \"name\": \"string\"\r\n        }\r\n      ],\r\n      \"count\": 32767,\r\n      \"is_required\": true\r\n    }\r\n  ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://89.23.117.168/api/v1/projects/",
+							"protocol": "http",
+							"host": [
+								"89",
+								"23",
+								"117",
+								"168"
+							],
+							"path": [
+								"api",
+								"v1",
+								"projects",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "1255. Изменения данных проекта",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"pm.test(\"Status code is 401 Unautorised\", function () {\r",
+									"    pm.response.to.have.status(401);\r",
+									"});\r",
+									"pm.test(\"X-Powered-By is not present\", function () {\r",
+									"    pm.response.to.have.not.header(\"X-Powered-By\");\r",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"name\": \"string\",\r\n  \"description\": \"string\",\r\n  \"started\": \"2024-03-22\",\r\n  \"ended\": \"2024-03-22\",\r\n  \"creator\": 0,\r\n  \"owner\": 0,\r\n  \"project_specialists\": [\r\n    {\r\n      \"specialist\": {\r\n        \"name\": \"string\",\r\n        \"specialization\": {\r\n          \"name\": \"string\"\r\n        }\r\n      },\r\n      \"skills\": [\r\n        {\r\n          \"name\": \"string\"\r\n        }\r\n      ],\r\n      \"count\": 32767,\r\n      \"is_required\": true\r\n    }\r\n  ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://89.23.117.168/api/v1/projects/",
+							"protocol": "http",
+							"host": [
+								"89",
+								"23",
+								"117",
+								"168"
+							],
+							"path": [
+								"api",
+								"v1",
+								"projects",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "1256. Удаление проекта по id",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 204\", function () {\r",
+									"    pm.response.to.have.status(204);\r",
+									"});\r",
+									"pm.test(\"Status code is 401 Unautorised\", function () {\r",
+									"    pm.response.to.have.status(401);\r",
+									"});\r",
+									"pm.test(\"X-Powered-By is not present\", function () {\r",
+									"    pm.response.to.have.not.header(\"X-Powered-By\");\r",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://89.23.117.168/api/v1/projects/2/",
+							"protocol": "http",
+							"host": [
+								"89",
+								"23",
+								"117",
+								"168"
+							],
+							"path": [
+								"api",
+								"v1",
+								"projects",
+								"2",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Получение  списка пользователей",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "token {{token17}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://89.23.117.168/api/v1/users/21/",
+					"protocol": "http",
+					"host": [
+						"89",
+						"23",
+						"117",
+						"168"
+					],
+					"path": [
+						"api",
+						"v1",
+						"users",
+						"21",
+						""
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
